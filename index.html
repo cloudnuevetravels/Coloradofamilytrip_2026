@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cloud Nueve Travels — Colorado April 2026</title>
+<style>
+:root{--m:#c9a8b8;--ml:#f5edf2;--mm:#e8d5e0;--md:#8a5f74;--p:#e8b89a;--pl:#fdf3ed;--pm:#f5ddd0;--pd:#9e6040;--cr:#faf8f5;--ink:#3a2d35;--im:#6b5560;--il:#a08898;--b:rgba(201,168,184,.25);--bm:rgba(201,168,184,.45)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#f0ebe6;min-height:100vh;padding:1.25rem .75rem 2rem;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+.wrap{background:var(--cr);padding:1.5rem 1.1rem 1.5rem;max-width:720px;margin:0 auto;color:var(--ink);border-radius:14px;border:1px solid var(--bm)}
+
+/* Header */
+.hdr{text-align:center;padding-bottom:1.25rem;border-bottom:1px solid var(--bm);margin-bottom:1.25rem}
+.wm{font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--md);margin-bottom:.35rem;font-weight:700}
+.ttl{font-size:21px;font-weight:500;color:var(--ink);margin-bottom:.2rem;letter-spacing:-.01em}
+.sub{font-size:12.5px;color:var(--il);margin-bottom:.9rem}
+.pills{display:flex;flex-wrap:wrap;gap:5px;justify-content:center}
+.pill{background:var(--ml);border:1px solid var(--mm);border-radius:50px;padding:3px 11px;font-size:10.5px;color:var(--md);font-weight:500}
+.pill.p{background:var(--pl);border-color:var(--pm);color:var(--pd)}
+
+/* Tab strip — horizontal scroll */
+.ts{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:1.1rem;padding-bottom:2px}
+.ts::-webkit-scrollbar{height:2px}
+.ts::-webkit-scrollbar-thumb{background:var(--mm);border-radius:2px}
+.tabs{display:flex;gap:4px;min-width:max-content}
+.tab{background:white;border:1px solid var(--bm);border-radius:7px;padding:5px 11px;cursor:pointer;text-align:center;transition:all .13s;white-space:nowrap}
+.tab:hover{border-color:var(--m);background:var(--ml)}
+.tab.on{background:var(--ml);border:1.5px solid var(--m)}
+.tl{font-size:8.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--il);margin-bottom:1px;font-weight:700}
+.td{font-size:11.5px;font-weight:500;color:var(--ink)}
+.tab.on .tl,.tab.on .td{color:var(--md)}
+
+/* Panels */
+.panel{display:none}.panel.on{display:block}
+.dh{display:flex;align-items:baseline;gap:9px;margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--b)}
+.dn{font-size:16px;font-weight:500;color:var(--ink)}
+.dd{font-size:11.5px;color:var(--il)}
+
+/* Section label */
+.sl{font-size:8.5px;text-transform:uppercase;letter-spacing:.15em;color:var(--md);font-weight:700;margin:1.1rem 0 .45rem;padding-left:1px}
+
+/* Blocks */
+.blk{background:white;border:1px solid var(--b);border-radius:9px;padding:11px 13px;margin-bottom:6px;display:grid;grid-template-columns:78px 1fr;gap:0 11px;align-items:start}
+.blk.f{grid-template-columns:1fr}
+.blk.a{border-left:3px solid var(--p);border-radius:0 9px 9px 0}
+.blk.s{border-color:var(--m);background:var(--ml)}
+.blk.w{border-color:var(--p);background:var(--pl);text-align:center;padding:18px 13px;grid-template-columns:1fr}
+.tm{font-size:10.5px;color:var(--il);font-weight:500;padding-top:2px;letter-spacing:.02em;line-height:1.4}
+.bt{font-size:12.5px;font-weight:500;color:var(--ink);margin-bottom:2px;line-height:1.35}
+.bn{font-size:11px;color:var(--im);line-height:1.5}
+
+/* Options */
+.opts{display:flex;flex-direction:column;gap:5px;margin-top:6px}
+.opt{background:var(--pl);border:1px solid var(--pm);border-radius:7px;padding:8px 11px}
+.ot{font-size:11.5px;font-weight:500;color:var(--pd);margin-bottom:2px}
+.on2{font-size:10.5px;color:var(--im);line-height:1.45}
+
+/* Badges */
+.b2{display:inline-block;font-size:8.5px;font-weight:700;letter-spacing:.04em;border-radius:50px;padding:2px 7px;margin-left:4px;vertical-align:middle}
+.b2.fr{background:#e8f5ec;color:#3a7a4e;border:1px solid #b8dfc6}
+.b2.op{background:var(--ml);color:var(--md);border:1px solid var(--mm)}
+.b2.rc{background:var(--pl);color:var(--pd);border:1px solid var(--pm)}
+.str{font-size:10px;color:var(--pd);font-weight:600}
+
+/* Price chips */
+.pr{display:flex;gap:5px;flex-wrap:wrap;margin-top:6px}
+.pc{background:var(--ml);border:1px solid var(--mm);border-radius:5px;padding:3px 8px;font-size:10.5px;color:var(--md)}
+.pc span{font-weight:700}
+
+/* Map link */
+.ml{display:inline-flex;align-items:center;gap:3px;font-size:10.5px;color:var(--md);text-decoration:none;font-weight:500;margin-top:6px;padding:4px 10px;border:1px solid var(--mm);border-radius:50px;background:var(--ml)}
+.ml:hover{background:var(--mm)}
+.ic{display:inline-block;width:11px;height:11px;vertical-align:middle;flex-shrink:0}
+
+/* Wedding */
+.wi{width:26px;height:26px;margin:0 auto 8px;opacity:.7}
+.wt{font-size:15px;font-weight:500;color:var(--pd);margin-bottom:3px}
+.ws{font-size:11.5px;color:var(--im);margin-bottom:8px;line-height:1.5}
+
+/* Nav buttons */
+.nav{display:flex;gap:8px;justify-content:space-between;margin-top:1.4rem;padding-top:1rem;border-top:1px solid var(--b)}
+.nb{display:flex;align-items:center;gap:5px;background:white;border:1px solid var(--bm);border-radius:8px;padding:8px 14px;cursor:pointer;font-size:11.5px;color:var(--md);font-weight:500;transition:all .13s;text-decoration:none}
+.nb:hover{background:var(--ml);border-color:var(--m)}
+.nb.ghost{opacity:0;pointer-events:none}
+.nb svg{width:12px;height:12px;flex-shrink:0}
+
+/* Footer */
+.foot{margin-top:1.5rem;padding-top:.9rem;border-top:1px solid var(--bm);text-align:center}
+.ft{font-size:9.5px;color:var(--il);letter-spacing:.1em;text-transform:uppercase}
+
+@media(max-width:460px){.blk{grid-template-columns:64px 1fr}.blk.f{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="hdr">
+  <div class="wm">Cloud Nueve Travels</div>
+  <div class="ttl">Colorado Family Trip</div>
+  <div class="sub">April 9 – 13, 2026 &nbsp;&middot;&nbsp; Denver &amp; Aurora, CO</div>
+  <div class="pills">
+    <span class="pill">MCO &rarr; DEN Southwest</span>
+    <span class="pill p">Wedding Apr 12 &middot; 6 PM</span>
+    <span class="pill">Fairfield Marriott Aurora</span>
+    <span class="pill p">Rental Car</span>
+  </div>
+</div>
+
+<div class="ts">
+  <div class="tabs">
+    <div class="tab on" onclick="go(0)"><div class="tl">Day 1</div><div class="td">Thu Apr 9</div></div>
+    <div class="tab" onclick="go(1)"><div class="tl">Day 2</div><div class="td">Fri Apr 10</div></div>
+    <div class="tab" onclick="go(2)"><div class="tl">Day 3</div><div class="td">Sat Apr 11</div></div>
+    <div class="tab" onclick="go(3)"><div class="tl">Day 4</div><div class="td">Sun Apr 12</div></div>
+    <div class="tab" onclick="go(4)"><div class="tl">Day 5</div><div class="td">Mon Apr 13</div></div>
+  </div>
+</div>
+
+<!-- ══ THURSDAY ══ -->
+<div class="panel on" id="d0">
+<div class="dh"><div class="dn">Thursday, April 9</div><div class="dd">Arrival Day</div></div>
+
+<div class="sl">Morning &middot; Travel</div>
+<div class="blk"><div class="tm">10:30 AM</div><div>
+  <div class="bt">Land at Denver International Airport</div>
+  <div class="bn">Southwest from MCO. Collect bags and pick up rental car — allow ~45 min for baggage + car rental desk.</div>
+</div></div>
+<div class="blk"><div class="tm">~11:30 AM</div><div>
+  <div class="bt">Drive to Mom's <span class="b2 op">first stop</span></div>
+  <div class="bn">Check in with family, settle in, and decompress. You're 2 hrs behind Florida — give everyone time to adjust.</div>
+</div></div>
+
+<div class="sl">Midday &middot; Hotel + Stanley Marketplace</div>
+<div class="blk"><div class="tm">~1:00 PM</div><div>
+  <div class="bt">Hotel Check-In</div>
+  <div class="bn">Fairfield by Marriott Inn &amp; Suites Denver Aurora / Medical Center. Request early check-in in advance.</div>
+</div></div>
+<div class="blk f a"><div>
+  <div class="bt">Lunch at Stanley Marketplace &nbsp;<span class="str">&#9733; 4.4–4.9</span></div>
+  <div class="bn">2501 Dallas St, Aurora — converted 1940s military hangar turned vibrant food hall with shops, restaurants, and a beer hall. Easy for family to join at any point.</div>
+  <a class="ml" href="https://maps.apple.com/?q=Stanley+Marketplace,+2501+Dallas+St,+Aurora,+CO"><svg class="ic" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="5" r="2.5" stroke="currentColor" stroke-width="1.1"/><path d="M6 11C6 11 1.5 7.5 1.5 5a4.5 4.5 0 019 0c0 2.5-4.5 6-4.5 6z" stroke="currentColor" stroke-width="1.1" fill="none"/></svg> Apple Maps</a>
+  <div class="opts">
+    <div class="opt"><div class="ot">Denver Biscuit Company &nbsp;<span class="str">&#9733; 4.5</span></div><div class="on2">Biscuit sandwiches, eggs, mimosas. Opens 8 AM — earliest option if arriving hungry.</div></div>
+    <div class="opt"><div class="ot">Boychik &nbsp;<span class="str">&#9733; 4.7</span></div><div class="on2">Mediterranean — chicken shawarma, mezze platters, housemade dips. Opens 11 AM.</div></div>
+    <div class="opt"><div class="ot">Stanley Beer Hall &nbsp;<span class="str">&#9733; 4.4</span></div><div class="on2">Self-pour beer wall, wings, green chili tots. Kid-friendly patio. Opens 11 AM.</div></div>
+  </div>
+</div></div>
+
+<div class="sl">Afternoon &middot; Optional Nearby</div>
+<div class="blk f a"><div>
+  <div class="bt">La Plaza Colorado &nbsp;<span class="str">&#9733; 4.3</span> <span class="b2 op">optional</span></div>
+  <div class="bn">15200 E Colfax Ave, Aurora — indoor marketplace with food trucks, a full bar, arcade, and a kids' play area. Fun and casual way to hang nearby after Stanley.</div>
+  <a class="ml" href="https://maps.apple.com/?q=La+Plaza+Colorado,+15200+E+Colfax+Ave,+Aurora,+CO"><svg class="ic" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="5" r="2.5" stroke="currentColor" stroke-width="1.1"/><path d="M6 11C6 11 1.5 7.5 1.5 5a4.5 4.5 0 019 0c0 2.5-4.5 6-4.5 6z" stroke="currentColor" stroke-width="1.1" fill="none"/></svg> Apple Maps</a>
+</div></div>
+
+<div class="sl">Evening &middot; Family Time + Casual Dinner</div>
+<div class="blk"><div class="tm">Evening</div><div>
+  <div class="bt">Hang at Mom's or Aunt's House</div>
+  <div class="bn">Flexible evening — swing by wherever family is gathered. No agenda, just quality time before the week gets going.</div>
+</div></div>
+<div class="blk f a"><div>
+  <div class="bt">Casual Dinner — Pick One or Both</div>
+  <div class="opts">
+    <div class="opt">
+      <div class="ot">The Halal Guys &nbsp;<span class="str">&#9733; 4.1</span></div>
+      <div class="on2">14535 E Alameda Ave, Aurora. Gyro and rice platters, falafel, legendary white and red sauces. Fast and satisfying. Open until 9:30 PM Thu.</div>
+      <a class="ml" style="margin-top:5px" href="https://maps.apple.com/?q=The+Halal+Guys,+14535+E+Alameda+Ave,+Aurora,+CO"><svg class="ic" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="5" r="2.5" stroke="currentColor" stroke-width="1.1"/><path d="M6 11C6 11 1.5 7.5 1.5 5a4.5 4.5 0 019 0c0 2.5-4.5 6-4.5 6z" stroke="currentColor" stroke-width="1.1" fill="none"/></svg> Apple Maps</a>
+    </div>
+    <div class="opt">
+      <div class="ot">Casa Tequila Grill &nbsp;<span class="str">&#9733; 4.8</span> &nbsp;<span class="b2 rc">top pick</span></div>
+      <div class="on2">5350 S Parker Rd, Aurora (near 80013). Authentic Mexican — asada fries, enchiladas, pozole, and great margaritas. Reviewers rave: 'I found my new favorite Mexican restaurant!' Fresh ingredients, big portions, kid-friendly. Open until 9 PM Thu.</div>
+      <a class="ml" style="margin-top:5px" href="https://maps.apple.com/?q=Casa+Tequila+Grill,+5350+S+Parker+Rd,+Aurora,+CO"><svg class="ic" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="5" r="2.5" stroke="currentColor" stroke-width="1.1"/><path d="M6 11C6 11 1.5 7.5 1.5 5a4.5 4.5 0 019 0c0 2.5-4.5 6-4.5 6z" stroke="currentColor" stroke-width="1.1" fill="none"/></svg> Apple Maps</a>
+    </div>
+  </div>
+</div></div>
+
+<div class="nav">
+  <div class="nb ghost"></div>
+  <div class="nb" onclick="go(1)">Friday <svg viewBox="0 0 12 12" fill="none"><path d="M4 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+</div>
+</div>
+
+<!-- ══ FRIDAY ══ -->
+<div class="panel" id="d1">
+<div class="dh"><div class="dn">Friday, April 10</div><div class="dd">Brunch + Activity Day</div></div>
+
+<div class="sl">Morning</div>
+<div class="blk"><div class="tm">Morning</div><div>
+  <div class="bt">Head to Mom's</div>
+  <div class="bn">Morning check-in with family before heading into the city for brunch.</div>
+</div></div>
+
+<div class="sl">Brunch</div>
+<div class="blk f a"><div>
+  <div class="bt">Happy Camper Pizza &nbsp;<span class="str">&#9733; 4.7</span></div>
+  <div class="bn">3211 N Pecos St, Denver. Brunch starts 9 AM Fridays. Breakfast bowls, creative pizzas, great cocktails. Preferred card (no cash). Easy for family to join.</div>
+  <a class="ml" href="https://maps.apple.com/?q=Happy+Camper+Pizza,+3211+N+Pecos+St,+Denver,+CO"><svg class="ic" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="5" r="2.5" stroke="currentColor" stroke-width="1.1"/><path d="M6 11C6 11 1.5 7.5 1.5 5a4.5 4.5 0 019 0c0 2.5-4.5 6-4.5 6z" stroke="currentColor" stroke-width="1.1" fill="none"/></svg> Apple Maps</a>
+</div></div>
+
+<div class="sl">Activity &middot; Downtown Aquarium <span class="b2 rc">~1.5 hrs</span></div>
+<div class="blk f a"><div>
+  <div class="bt">Downtown Aquarium &nbsp;<span class="str">&#9733; 4.3</span></div>
+  <div class="bn">700 Water St, Denver. 500+ species — stingray touch tank, sharks, tigers, jellyfish, and 4D theater. Plan 1.5–2 hrs to be back by 4 PM comfortably. Buy tickets online to skip lines.</div>
+  <a class="ml" href="https://maps.apple.com/?q=Downtown+Aquarium,+700+Water+St,+Denver,+CO"><svg class="ic" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="5" r="2.5" stroke="currentColor" stroke-width="1.1"/><path d="M6 11C6 11 1.5 7.5 1.5 5a4.5 4.5 0 019 0c0 2.5-4.5 6-4.5 6z" stroke="currentColor" stroke-width="1.1" fill="none"/></svg> Apple Maps</a>
+  <div class="pr">
+    <div class="pc">Adult (12–64) <span>~$23.50</span></div>
+    <div class="pc">Child (3–11) <span>~$17.50</span></div>
+    <div class="pc">Under 2 <span>Free</span></div>
+    <div class="pc">+4D upgrade <span>~$6.50</span></div>
+  </div>
+</div></div>
+
+<div class="blk"><div class="tm">~4:00 PM</div><div>
+  <div class="bt">Return to Hotel &amp; Reset</div>
+  <div class="bn">Freshen up, relax, and recharge before the evening activities.</div>
+</div></div>
+
+<div class="sl">Evening &middot; Family Fun @ 6 PM <span class="b2 op">open invite</span></div>
+<div class="blk f a"><div>
+  <div class="bt">Choose Your Evening</div>
+  <div class="opts">
+    <div class="opt">
+      <div class="ot">Lucky Strike Southlands &nbsp;<span class="str">&#9733; 3.9</span></div>
+      <div class="on2">23901 E Orchard Rd, Aurora. Upscale bowling, arcade, full bar and food. Book a lane in advance. Opens 4 PM weekdays.</div>
+      <a class="ml" style="margin-top:5px" href="https://maps.apple.com/?q=Lucky+Strike+Southlands,+23901+E+Orchard+Rd,+Aurora,+CO"><svg class="ic" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="5" r="2.5" stroke="currentColor" stroke-width="1.1"/><path d="M6 11C6 11 1.5 7.5 1.5 5a4.5 4.5 0 019 0c0 2.5-4.5 6-4.5 6z" stroke="currentColor" stroke-width="1.1" fill="none"/></svg> Apple Maps</a>
+    </div>
+    <div class="opt">
+      <div class="ot">Activate Aurora &nbsp;<span class="str">&#9733; 5.0</span></div>
+      <div class="on2">6514 S Parker Rd, Aurora. Real-life video game meets escape room — physical obstacle games and puzzles. Book online. Open until 10 PM Fri.</div>
+      <a class="ml" style="margin-top:5px" href="https://maps.apple.com/?q=Activate+Aurora,+6514+S+Parker+Rd,+Aurora,+CO"><svg class="ic" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="5" r="2.5" stroke="currentColor" stroke-width="1.1"/><path d="M6 11C6 11 1.5 7.5 1.5 5a4.5 4.5 0 019 0c0 2.5-4.5 6-4.5 6z" stroke="currentColor" stroke-width="1.1" fill="none"/></svg> Apple Maps</a>
+    </div>
+    <div class="opt">
+      <div class="ot">Game Show Battle Rooms &nbsp;<span class="str">&#9733; 5.0</span></div>
+      <div class="on2">8230 S Colorado Blvd, Centennial. Live-hosted real-life game show — incredible reviews, ideal for groups of 6+. Book in advance. Open until 10 PM.</div>
+      <a class="ml" style="margin-top:5px" href="https://maps.apple.com/?q=Game+Show+Battle+Rooms,+8230+S+Colorado+Blvd,+Centennial,+CO"><svg class="ic" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="5" r="2.5" stroke="currentColor" stroke-width="1.1"/><path d="M6 11C6 11 1.5 7.5 1.5 5a4.5 4.5 0 019 0c0 2.5-4.5 6-4.5 6z" stroke="currentColor" stroke-width="1.1" fill="none"/></svg> Apple Maps</a>
+    </div>
+  </div>
+</div></div>
+
+<div class="blk"><div class="tm">Late evening</div><div>
+  <div class="bt">Early Night at Hotel <span class="b2 rc">4:30 AM tomorrow</span></div>
+  <div class="bn">Lay out Red Rocks clothes, pack layers and thermoses, set alarms for 4:30 AM.</div>
+</div></div>
+
+<div class="nav">
+  <div class="nb" onclick="go(0)"><svg viewBox="0 0 12 12" fill="none"><path d="M8 2L4 6l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Thursday</div>
+  <div class="nb" onclick="go(2)">Saturday <svg viewBox="0 0 12 12" fill="none"><path d="M4 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+</div>
+</div>
+
+<!-- ══ SATURDAY ══ -->
+<div class="panel" id="d2">
+<div class="dh"><div class="dn">Saturday, April 11</div><div class="dd">Red Rocks Day + Family Night</div></div>
+
+<div class="sl">Pre-Dawn</div>
+<div class="blk"><div class="tm">4:30 AM</div><div>
+  <div class="bt">Wake Up &amp; Load the Car</div>
+  <div class="bn">Dress in warm layers — it will be cold at 6,450 ft elevation. Pack thermoses of hot coffee or tea, water bottles, and light snacks.</div>
+</div></div>
+<div class="blk f a"><div>
+  <div class="bt">Quick Stop &middot; 7-Eleven (24/7) <span class="b2 op">near hotel</span></div>
+  <div class="bn">15296 E Hampden Ave, Aurora — open 24 hours. Grab granola bars, fruit, sandwiches, and hot coffee for the ~25 min drive.</div>
+  <a class="ml" href="https://maps.apple.com/?q=7-Eleven,+15296+E+Hampden+Ave,+Aurora,+CO"><svg class="ic" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="5" r="2.5" stroke="currentColor" stroke-width="1.1"/><path d="M6 11C6 11 1.5 7.5 1.5 5a4.5 4.5 0 019 0c0 2.5-4.5 6-4.5 6z" stroke="currentColor" stroke-width="1.1" fill="none"/></svg> Apple Maps</a>
+</div></div>
+
+<div class="sl">Red Rocks Amphitheatre &middot; Morrison, CO <span class="b2 fr">Free admission</span></div>
+<div class="blk f a"><div>
+  <div class="bt">Drive to Red Rocks &amp; Park at Upper North Lot</div>
+  <div class="bn" style="margin-bottom:7px">GPS destination: <strong style="color:#3a2d35">18300 W Alameda Pkwy, Morrison, CO 80465</strong>. Inside the park follow signs for the <strong style="color:#3a2d35">Upper North Lot / Top Circle Lot</strong> — you enter at row 70 at the top and walk DOWN the stairs. Best sunrise vantage, zero uphill. Park opens 1 hr before sunrise.</div>
+  <a class="ml" href="https://maps.apple.com/?address=18300+W+Alameda+Pkwy,+Morrison,+CO+80465"><svg class="ic" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="5" r="2.5" stroke="currentColor" stroke-width="1.1"/><path d="M6 11C6 11 1.5 7.5 1.5 5a4.5 4.5 0 019 0c0 2.5-4.5 6-4.5 6z" stroke="currentColor" stroke-width="1.1" fill="none"/></svg> 18300 W Alameda Pkwy, Morrison — Apple Maps</a>
+  <div class="bn" style="margin-top:5px;font-size:10px;color:var(--il)">Confirm no concert at redrocksonline.com — non-event days are always free.</div>
+</div></div>
+<div class="blk"><div class="tm">~6:31 AM</div><div>
+  <div class="bt">Sunrise at Red Rocks <span class="b2 fr">Free</span></div>
+  <div class="bn">Faces east toward downtown Denver. Invite family — no ticket needed, just show up.</div>
+</div></div>
+<div class="blk"><div class="tm">7:00 AM+</div><div>
+  <div class="bt">Trading Post Trail <span class="b2 op">optional</span></div>
+  <div class="bn">1.4-mile loop through red sandstone, ~500 ft elevation gain. Manageable for a 9-year-old in sneakers.</div>
+</div></div>
+<div class="blk"><div class="tm">7:00 AM+</div><div>
+  <div class="bt">Visitor Center &amp; Colorado Music Hall of Fame <span class="b2 fr">Free</span> <span class="b2 op">optional</span></div>
+  <div class="bn">Opens 7 AM. Exhibits on every artist who's performed at Red Rocks. Worth 20–30 min inside.</div>
+</div></div>
+<div class="blk"><div class="tm">9:00 AM+</div><div>
+  <div class="bt">Trading Post Gift Shop <span class="b2 op">optional</span></div>
+  <div class="bn">Opens 9 AM. Colorado souvenirs and Red Rocks gear — no need to move the car.</div>
+</div></div>
+<div class="blk"><div class="tm">After sunrise</div><div>
+  <div class="bt">Huckleberry Roasters Coffee &middot; Visitor Center</div>
+  <div class="bn">Award-winning Denver coffee roaster inside the Visitor Center. Opens 7 AM — no need to move the car.</div>
+</div></div>
+
+<div class="sl">Lunch &middot; Morrison</div>
+<div class="blk f a"><div>
+  <div class="bt">Hungry Goat Scratch Kitchen &amp; Wine Bar &nbsp;<span class="str">&#9733; 4.7</span></div>
+  <div class="bn">102 Market St, Morrison — 5 min from Red Rocks. Baked goat cheese dip, tomato soup, bolognese. All scratch-made. Opens 11 AM Sat. Call ahead for groups.</div>
+  <a class="ml" href="https://maps.apple.com/?q=Hungry+Goat+Scratch+Kitchen,+102+Market+St,+Morrison,+CO"><svg class="ic" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="5" r="2.5" stroke="currentColor" stroke-width="1.1"/><path d="M6 11C6 11 1.5 7.5 1.5 5a4.5 4.5 0 019 0c0 2.5-4.5 6-4.5 6z" stroke="currentColor" stroke-width="1.1" fill="none"/></svg> Apple Maps</a>
+</div></div>
+
+<div class="sl">Afternoon</div>
+<div class="blk"><div class="tm">~2:00 PM</div><div>
+  <div class="bt">Return to Hotel &amp; Full Recharge</div>
+  <div class="bn">4:30 AM sunrise + full Red Rocks morning — take a real rest. Nap, shower, relax.</div>
+</div></div>
+<div class="blk"><div class="tm">2–5 PM</div><div>
+  <div class="bt">Freestyle <span class="b2 op">open time</span></div>
+  <div class="bn">No agenda. The big moments are done. Rest or do whatever feels right.</div>
+</div></div>
+
+<div class="sl">Evening &middot; Family Gather</div>
+<div class="blk"><div class="tm">~5:00 PM</div><div>
+  <div class="bt">Get Ready for the Evening</div>
+  <div class="bn">Change and prep before heading to the family gathering.</div>
+</div></div>
+<div class="blk s"><div class="tm">7:00 PM</div><div>
+  <div class="bt">Family Get-Together at Aunt's House <span class="b2 op">open invite</span></div>
+  <div class="bn">Pre-wedding family reunion — everyone arrives and comes together before the big day. Bring something to share!</div>
+</div></div>
+
+<div class="nav">
+  <div class="nb" onclick="go(1)"><svg viewBox="0 0 12 12" fill="none"><path d="M8 2L4 6l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Friday</div>
+  <div class="nb" onclick="go(3)">Sunday <svg viewBox="0 0 12 12" fill="none"><path d="M4 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+</div>
+</div>
+
+<!-- ══ SUNDAY ══ -->
+<div class="panel" id="d3">
+<div class="dh"><div class="dn">Sunday, April 12</div><div class="dd">Wedding Day</div></div>
+
+<div class="sl">Morning</div>
+<div class="blk"><div class="tm">Morning</div><div>
+  <div class="bt">Breakfast at Hotel <span class="b2 fr">Included</span></div>
+  <div class="bn">Leisurely hotel breakfast. Relaxed start to a very big day.</div>
+</div></div>
+
+<div class="sl">Lunch</div>
+<div class="blk f a"><div>
+  <div class="bt">Six Capital Brewing &nbsp;<span class="str">&#9733; 4.7</span></div>
+  <div class="bn">16701 E Iliff Ave, Aurora. Texas-inspired food — brisket tacos, pulled pork, smoked wings, nachos. Family-friendly, great service. Opens Sunday 12 PM. Close to both the hotel and wedding venue.</div>
+  <a class="ml" href="https://maps.apple.com/?q=Six+Capital+Brewing,+16701+E+Iliff+Ave,+Aurora,+CO"><svg class="ic" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="5" r="2.5" stroke="currentColor" stroke-width="1.1"/><path d="M6 11C6 11 1.5 7.5 1.5 5a4.5 4.5 0 019 0c0 2.5-4.5 6-4.5 6z" stroke="currentColor" stroke-width="1.1" fill="none"/></svg> Apple Maps</a>
+</div></div>
+
+<div class="sl">Afternoon &middot; Freestyle</div>
+<div class="blk"><div class="tm">After lunch</div><div>
+  <div class="bt">Freestyle Day <span class="b2 op">open time</span></div>
+  <div class="bn">No agenda — relax, hang with family, or explore the area. The evening is the main event.</div>
+</div></div>
+<div class="blk"><div class="tm">No later than 4 PM</div><div>
+  <div class="bt">Start Getting Ready <span class="b2 rc">hard deadline</span></div>
+  <div class="bn">Hair, outfits, photos — give everyone plenty of time. Leave for the venue by ~5:15 PM.</div>
+</div></div>
+
+<div class="sl">The Main Event</div>
+<div class="blk w">
+  <svg class="wi" viewBox="0 0 28 28" fill="none"><path d="M14 5C14 5 8 9 8 15c0 3.3 2.7 6 6 6s6-2.7 6-6c0-6-6-10-6-10z" stroke="#9e6040" stroke-width="1.2" fill="none"/><path d="M9 23h10" stroke="#9e6040" stroke-width="1.2" stroke-linecap="round"/><path d="M11 25.5h6" stroke="#c9a8b8" stroke-width="1.2" stroke-linecap="round"/></svg>
+  <div class="wt">Cousin's Wedding Ceremony</div>
+  <div class="ws">6:00 PM &middot; Nuur Event Center<br>13250 E Mississippi Ave, Aurora, CO 80012</div>
+  <a class="ml" style="margin:0 auto" href="https://maps.apple.com/?address=13250+E+Mississippi+Ave,+Aurora,+CO+80012"><svg class="ic" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="5" r="2.5" stroke="currentColor" stroke-width="1.1"/><path d="M6 11C6 11 1.5 7.5 1.5 5a4.5 4.5 0 019 0c0 2.5-4.5 6-4.5 6z" stroke="currentColor" stroke-width="1.1" fill="none"/></svg> Directions — Nuur Event Center</a>
+</div>
+<div class="blk"><div class="tm">Evening</div><div>
+  <div class="bt">Reception &amp; Celebration</div>
+  <div class="bn">Dance, eat, and celebrate. Let the little one stay up — this is a night worth every minute.</div>
+</div></div>
+
+<div class="nav">
+  <div class="nb" onclick="go(2)"><svg viewBox="0 0 12 12" fill="none"><path d="M8 2L4 6l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Saturday</div>
+  <div class="nb" onclick="go(4)">Monday <svg viewBox="0 0 12 12" fill="none"><path d="M4 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+</div>
+</div>
+
+<!-- ══ MONDAY ══ -->
+<div class="panel" id="d4">
+<div class="dh"><div class="dn">Monday, April 13</div><div class="dd">Last Day &amp; Departure</div></div>
+
+<div class="sl">Morning</div>
+<div class="blk"><div class="tm">Morning</div><div>
+  <div class="bt">Sleep In — Leisurely Start</div>
+  <div class="bn">No alarm. Recover from the wedding night and enjoy a slow, unhurried morning.</div>
+</div></div>
+<div class="blk"><div class="tm">~12:00 PM</div><div>
+  <div class="bt">Check Out of Hotel</div>
+  <div class="bn">Pack up and head to Mom's house.</div>
+</div></div>
+
+<div class="sl">Daytime &middot; Denver Museum of Nature &amp; Science <span class="b2 fr">Free Apr 13</span></div>
+<div class="blk f a"><div>
+  <div class="bt">Denver Museum of Nature &amp; Science</div>
+  <div class="bn">2001 Colorado Blvd, Denver. Free admission on April 13 — no tickets required per site. Dinosaur fossils, Space Odyssey planetarium, Egyptian mummies, and the World's Largest Dinosaurs exhibit (through Sept 2026). Open 9 AM – 5 PM.</div>
+  <a class="ml" href="https://maps.apple.com/?q=Denver+Museum+of+Nature+and+Science,+2001+Colorado+Blvd,+Denver,+CO"><svg class="ic" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="5" r="2.5" stroke="currentColor" stroke-width="1.1"/><path d="M6 11C6 11 1.5 7.5 1.5 5a4.5 4.5 0 019 0c0 2.5-4.5 6-4.5 6z" stroke="currentColor" stroke-width="1.1" fill="none"/></svg> Apple Maps</a>
+</div></div>
+
+<div class="sl">Food &middot; On-Property</div>
+<div class="blk f"><div>
+  <div class="bt">Expedition Grille &nbsp;<span class="b2 rc">on-site recommended</span></div>
+  <div class="bn">Inside the museum — full cafeteria with burgers, pizza, salads, wraps, and kids' meals. Largest on-site dining option and perfect for a mid-visit family lunch break. Open museum hours.</div>
+</div></div>
+
+<div class="sl">Food &middot; Off-Property (Trendy + Top Rated)</div>
+<div class="blk f a"><div>
+  <div class="bt">Snooze, an A.M. Eatery &nbsp;<span class="str">&#9733; 4.5</span> <span class="b2 rc">top pick</span></div>
+  <div class="bn">700 Colorado Blvd, Denver — just minutes from the museum. Denver's beloved and trendy all-day breakfast spot. Pineapple upside-down pancakes, breakfast burritos, eggs Benedict flights, and great cocktails. Lively retro diner vibe, very family-friendly. A Denver institution that visitors constantly rave about. Open until 2:30 PM Mon.</div>
+  <a class="ml" href="https://maps.apple.com/?q=Snooze+AM+Eatery,+700+Colorado+Blvd,+Denver,+CO"><svg class="ic" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="5" r="2.5" stroke="currentColor" stroke-width="1.1"/><path d="M6 11C6 11 1.5 7.5 1.5 5a4.5 4.5 0 019 0c0 2.5-4.5 6-4.5 6z" stroke="currentColor" stroke-width="1.1" fill="none"/></svg> Apple Maps</a>
+</div></div>
+
+<div class="sl">Evening &middot; Wrap Up + Departure</div>
+<div class="blk"><div class="tm">Late afternoon</div><div>
+  <div class="bt">Head Back to Mom's</div>
+  <div class="bn">Collect luggage and say your goodbyes before heading to return the rental car.</div>
+</div></div>
+<div class="blk"><div class="tm">~9:00 PM</div><div>
+  <div class="bt">Return Rental Car at DEN</div>
+  <div class="bn">Allow extra time for car drop, shuttle to terminal, and security. DEN is a large airport — build in plenty of buffer. Check in online 24 hrs before departure.</div>
+</div></div>
+<div class="blk s"><div class="tm">11:50 PM</div><div>
+  <div class="bt">Depart DEN via Southwest — MCO Bound</div>
+  <div class="bn">Safe travels. What an unforgettable Colorado week.</div>
+</div></div>
+
+<div class="nav">
+  <div class="nb" onclick="go(3)"><svg viewBox="0 0 12 12" fill="none"><path d="M8 2L4 6l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Sunday</div>
+  <div class="nb ghost"></div>
+</div>
+</div>
+
+<div class="foot"><div class="ft">Cloud Nueve Travels &middot; Colorado April 2026</div></div>
+</div>
+
+<script>
+var cur=0;
+var ids=['d0','d1','d2','d3','d4'];
+function go(n){
+  document.getElementById(ids[cur]).classList.remove('on');
+  document.querySelectorAll('.tab')[cur].classList.remove('on');
+  cur=n;
+  document.getElementById(ids[cur]).classList.add('on');
+  document.querySelectorAll('.tab')[cur].classList.add('on');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
